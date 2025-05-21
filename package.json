@@ -1,0 +1,28 @@
+{
+  "name": "minimal-entra-auth",
+  "version": "1.0.0",
+  "description": "Minimal Entra ID authentication example with PKCE flow",
+  "main": "minimal-entra-auth.js",
+  "scripts": {
+    "start": "node minimal-entra-auth.js",
+    "dev": "nodemon minimal-entra-auth.js",
+    "start:msal": "node minimal-entra-auth-msal.js",
+    "dev:msal": "nodemon minimal-entra-auth-msal.js"
+  },
+  "dependencies": {
+    "@azure/msal-node": "^1.18.0",
+    "@redis/client": "5.0.0-next.6",
+    "@redis/entraid": "5.0.0-next.6",
+    "base64url": "^3.0.1",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "private": true
+}
