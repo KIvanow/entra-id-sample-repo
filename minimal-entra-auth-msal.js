@@ -46,7 +46,7 @@ const scopes = [
   'email',
   'profile',
   'https://management.azure.com/user_impersonation',
-//   'https://redis.azure.com/'
+  //   'https://redis.azure.com/'
 ]
 
 
@@ -109,7 +109,7 @@ app.get('/auth/callback', async (req, res) => {
     }
 
     const tokenResponse = await msalClient.acquireTokenByCode(tokenRequest)
-    console.log('Token acquired successfully')
+    console.log('Token acquired successfully', tokenResponse)
 
     const username = tokenResponse.account?.username || 'unknown'
 
@@ -117,9 +117,9 @@ app.get('/auth/callback', async (req, res) => {
       <h1>Authentication Successful!</h1>
       <p>Token acquired successfully!</p>
       <pre>${JSON.stringify({
-    userId: username,
-    token: tokenResponse.accessToken ? `${tokenResponse.accessToken.substring(0, 10)}...` : 'N/A'
-  }, null, 2)}</pre>
+      userId: username,
+      token: tokenResponse.accessToken ? `${tokenResponse.accessToken}...` : 'N/A'
+    }, null, 2)}</pre>
       <p><a href="/auth/login">Try Again</a></p>
     `)
 
